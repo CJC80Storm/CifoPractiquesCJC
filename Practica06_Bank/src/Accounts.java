@@ -15,29 +15,24 @@ public class Accounts {
 		System.out.println(creditbank.toString());
 		
 		transfer(account001,account002,100.00);
-		
-		
-		
-	}
-
-	private static void transfer(Object withdrawal, Object deposit,double i) {
-		// TODO Auto-generated method stub
+		personalCredit(account003,15000);
+		yourMethod(account001,account002,account003);
 		
 	}
 
-	
-	
-	
-	public static void personalCredit  () {			
-		
-		
-		
+	public static void transfer(Object from, Object to,double i) {
+		/*from.withdrawal(i);
+		to.deposit(i);*/
 	}
 
-
-	public static void yourMethod () {
-		
+	public static void personalCredit  (Object to, double i) {		
+		/*to.deposit(i);
+		System.out.Println(to.owner+ "must return "+i+"€ in 3 years, at reason of "+i+1,1/(3*12)+"month");*/
 	}
 
-
+	public static void yourMethod (Object a1, Object a2, Object a3) {
+		System.out.println(a1.toString());
+		System.out.println(a2.toString());
+		System.out.println(a3.toString());
+	}
 }
