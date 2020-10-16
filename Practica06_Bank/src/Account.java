@@ -1,7 +1,7 @@
 
 public class Account {
-	private double balance;
-    private String owner;
+	public double balance;
+    public String owner;
  
     public Account(String owner, double balance) {
         this.balance = balance;

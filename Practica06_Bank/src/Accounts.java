@@ -6,6 +6,7 @@ public class Accounts {
 		Account account001 = new Account("Pepito Perez",1000.31);
 		Account account002 = new Account("Jaimito Perez",-20.35);
 		Account account003 = new Account("Juanito Perez",1368.50);
+		Account account004 = new Account("Jai",20.35);
 		Account creditbank = new Account ("Credit Bank",10000000);
 		
 		System.out.println("Condiciones Iniciales:");
@@ -16,23 +17,40 @@ public class Accounts {
 		
 		transfer(account001,account002,100.00);
 		personalCredit(account003,15000);
-		yourMethod(account001,account002,account003);
-		
+		yourMethod(account001);
+		yourMethod(account002);
+		yourMethod(account004);
 	}
 
 	public static void transfer(Object from, Object to,double i) {
-		/*from.withdrawal(i);
-		to.deposit(i);*/
+		((Account)from).withdrawal(i);
+		((Account)to).deposit(i);
 	}
 
 	public static void personalCredit  (Object to, double i) {		
-		/*to.deposit(i);
-		System.out.Println(to.owner+ "must return "+i+"€ in 3 years, at reason of "+i+1,1/(3*12)+"month");*/
+		((Account)to).deposit(i);
+		String b = ((Account)to).owner;
+		System.out.println(b+" must return "+(i*1.1)+"€ in 3 years, at reason of "+((i*1.1)/36)+"per month.");
 	}
 
-	public static void yourMethod (Object a1, Object a2, Object a3) {
-		System.out.println(a1.toString());
-		System.out.println(a2.toString());
-		System.out.println(a3.toString());
+	public static void yourMethod (Object a1) {
+		String a =((Account)a1).owner;
+		int password =0;
+				System.out.println(a);
+		for(int i=0;i<6;i++) {
+			int numNombre = a.length()-i;
+			password = password +(int) Math.pow(10, i)*numNombre;
+		}
+		if (password<0) {
+			password=-password;
+		}
+		while (true) {
+			if(password>10000) {
+				password=password/3;
+			} else break;
+		}	
+		System.out.println("The password of "+((Account)a1).owner+" is: "+password);
+		
 	}
+
 }
