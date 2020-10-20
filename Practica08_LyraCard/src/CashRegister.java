@@ -12,7 +12,7 @@ public class CashRegister {
 	}
 
 	public CashRegister (double cashInRegister,int economicalSold,int gourmetSold) {
-	this.cashInRegister=0.0;
+	this.cashInRegister=0;
 	this.economicalSold=0;
 	this.gourmetSold=0;
 	}
