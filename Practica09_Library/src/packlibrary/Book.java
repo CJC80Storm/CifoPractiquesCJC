@@ -2,6 +2,7 @@ package packlibrary;
 import java.util.ArrayList;
 
 
+
 public class Book {
 	public String title;
 	public String author;
@@ -19,12 +20,13 @@ public class Book {
 		for(int a=0;a<=abcd.length()-1;a++) {
 			abcCapAMinus.add(abcd.charAt(a));
 		}
-				
+		
 		for(int i=0;i<=word.length()-1;i++){
-			for(int b=0;b<=((abcCapAMinus.size()-2)/2);b++){
+			for(int b=0;b<=((abcCapAMinus.size()/2)-1);b++){
 				if (abcCapAMinus.get(b)==word.charAt(i)) {
-					b=b+((abcCapAMinus.size()-2)/2);
-					word.replace(word.charAt(i),abcCapAMinus.get(b));
+					int c=b+(abcCapAMinus.size()/2);
+					word=word.replace(word.charAt(i),abcCapAMinus.get(c));
+															
 					break;
 				}
 			}

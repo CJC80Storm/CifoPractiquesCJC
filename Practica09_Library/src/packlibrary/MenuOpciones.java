@@ -6,6 +6,7 @@ public class MenuOpciones {
 	public static void main (String[] args) {
 
 		String menu;
+		String readed;
 		String titleBook;
 		String  authorBook;
 		int yearBook;
@@ -22,8 +23,8 @@ public class MenuOpciones {
 		System.out.println("How procedure? (Type your choice: Insert Book/Search Book/Quit).");
 	
 		Scanner readerMenu= new Scanner(System.in);
-		menu= readerMenu.nextLine();
-		menu=Book.convertLetter(menu);
+		readed= readerMenu.nextLine();
+		menu=Book.convertLetter(readed);
 		
 		Library.baseConditions(counterInsertedBooks);
 		
@@ -69,7 +70,7 @@ public class MenuOpciones {
 					
 					if (menu.contentEquals(menu3)) break;
 				}
-		
+				System.out.println("How procedure? (Type your choice: Insert Book/Search Book/Quit).");
 			}
 		}
 		System.out.println("There is: "+counterInsertedBooks+" new books added.");
@@ -79,23 +80,23 @@ public class MenuOpciones {
 
 	private static boolean insertBook() {
 		
-		String menu;
 		String titleBook;
 		String  authorBook;
 		int yearBook;
 		String menu3="quit";
 		
+		System.out.println("Introduce de Title: (if unkwoned: Unkwoned).");
 		Scanner readerString= new Scanner(System.in);
 		titleBook= readerString.nextLine();
 		titleBook=Book.convertLetter(titleBook);
 		if (titleBook==menu3) {return false;}
 
-		System.out.println("Introduce de author of the searched book: (if unkwoned: Unkwoned).");
+		System.out.println("Introduce de author: (if unkwoned: Unkwoned).");
 		Scanner readerString2= new Scanner(System.in);
 		authorBook= readerString2.nextLine();
 		authorBook=Book.convertLetter(authorBook);
 
-		System.out.println("Introduce de year of the searched book: (if unkwoned: 100).");
+		System.out.println("Introduce de year: (if unkwoned: 100).");
 		Scanner readerint= new Scanner(System.in);
 		yearBook=readerint.nextInt();
 		
