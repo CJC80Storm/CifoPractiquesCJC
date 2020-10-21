@@ -40,9 +40,9 @@ public class E069_Palidrome {
 		return(a);
 	}
 
-	public static char Reverse(String Name, int t) {
+	public static char Reverse (String Name, int t) {
 		int l=Name.length();	
 		char answer = Name.charAt(t);
-		return(answer);
+		return answer;
 	}
 }
