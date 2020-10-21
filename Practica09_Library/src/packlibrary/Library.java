@@ -1,9 +1,10 @@
+package packlibrary;
 import java.util.ArrayList;
 
 public class Library {
 	int i=0;
 	
-	ArrayList<Book> library = new ArrayList<Book>();
+	static ArrayList<Book> library = new ArrayList<Book>();
 		
 	public static int baseConditions (int counter) {
 		Book cheese = new Book("Cheese Problems Solved", "Woodhead Publishing", 2007);
@@ -17,12 +18,12 @@ public class Library {
 		this.library.add(bookAdded);
 	}
 
-	public void searchOnLibrary(String searchedTitle) {
+	public static void searchOnLibrary(String searchedTitle) {
 		System.out.println(" The books of opur library than contains "+searchedTitle+" are:");
 		int counter=0;
 		for(int i=0;i<=(library.size()-1);i++) {
-			if(library.contains(searchedTitle)) {
-				//System.out.println(Book.getTitle());
+			if (library.contains(searchedTitle)) {
+				System.out.println();
 				counter++;
 			}
 		}
