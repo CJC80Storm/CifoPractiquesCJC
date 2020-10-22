@@ -34,7 +34,7 @@ public class MenuOpciones {
 		//}
 
 	
-		while(menu!=menu3){
+		while(menu.contentEquals(menu3)){
 			while(true) {
 				
 				if(menu.contentEquals(menu1)) { //Insert book
