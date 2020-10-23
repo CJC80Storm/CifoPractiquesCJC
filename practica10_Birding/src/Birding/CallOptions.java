@@ -8,6 +8,8 @@ public class CallOptions {
 		int referenceChoice;
 		boolean answer=true;
 			
+		BirdsDB db = new BirdsDB( );
+		
 		while(answer) {
 			referenceChoice=CallOptions.call();
 			answer=choice(referenceChoice);
