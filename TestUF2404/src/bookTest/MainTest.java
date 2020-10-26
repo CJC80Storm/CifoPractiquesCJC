@@ -10,9 +10,9 @@ public class MainTest {
 
 	public static void main(String[] args) {
 	
-		String libraryDB1="TestUF2404";
+	
 		
-		ArrayList<Author> db = new ArrayList<Author>();
+		ArrayList<Author> db= new ArrayList<Author>();
 	
 		Author author1 = new Author("Fulanito", "ful2322@mail.net", m);
 		Author author2 = new Author("Menganita", "mengarodri55@mail.net", f);
