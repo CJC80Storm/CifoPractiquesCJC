@@ -1,3 +1,4 @@
+import model.LyyraCard;
 
 public class CashRegister {
 	public static double cashInRegister;   // the amount of cash in the register

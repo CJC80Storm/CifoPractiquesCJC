@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import model.LyyraCard;
+
 public class BarCampus {
 	public static void main(String[] args) {
 		double cash;

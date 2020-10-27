@@ -1,34 +1,29 @@
-package bookTest;
+package menu;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import basic.Book;
+import basicList.Author;
 
-public class MainTest {
+public class Menu {
 	private static char m;
 	private static char f;
-
-	public static void main(String[] args) {
 	
+	public static ArrayList<Author > setDataBase(){
 	
-		
-		ArrayList<Author> db= new ArrayList<Author>();
+	ArrayList<Author> db= new ArrayList<Author>();
 	
-		Author author1 = new Author("Fulanito", "ful2322@mail.net", m);
-		Author author2 = new Author("Menganita", "mengarodri55@mail.net", f);
-		Author author3 = new Author("Jaimito", "toloco69@mail.net", m);
-		Collections.addAll(db,author1,author2,author3);
-		
-		setmenu(db);
-		
-		System.out.println("The books of "+author1.getName()+"are: "+author1.getBooks());
-		System.out.println("The books of "+author2.getName()+"are: "+author2.getBooks());
-		System.out.println("The books of "+author3.getName()+"are: "+author3.getBooks());					
-		
-		System.out.println("See you in the bookshop!");
+	Author author1 = new Author("Fulanito", "ful2322@mail.net", m);
+	Author author2 = new Author("Menganita", "mengarodri55@mail.net", f);
+	Author author3 = new Author("Jaimito", "toloco69@mail.net", m);
+	Collections.addAll(db,author1,author2,author3);
+	
+	return db;
 	}
-
-	private static void setmenu(ArrayList<Author> db) {
+	
+	public static void setmenu(ArrayList<Author> db) {
 		String typed;
 		
 		System.out.println("Type you choice(letter); Start, 'Create book', 'ReAssing', or 'Quit'.");
@@ -50,7 +45,7 @@ public class MainTest {
 				}
 	}
 
-	public static void start(ArrayList<Author> db){
+	public static ArrayList<Author> start(ArrayList<Author> db){
 		
 		ArrayList<Book> books1 =new ArrayList<Book>();
 			Book Sabor= new Book("Sabor",db.get(0).getName(),2001,"EdicionesA",20.0);
@@ -69,9 +64,10 @@ public class MainTest {
 			db.get(1).setBooks(books2);
 		ArrayList<Book> books3 =new ArrayList<Book>();
 			db.get(3).setBooks(books3);
+			return db;
 	}
 
-	public static void createBook(ArrayList<Author> db){
+	public static ArrayList<Author> createBook(ArrayList<Author> db){
 		int index=0;
 		ArrayList<Book> books2 =new ArrayList<Book>();
 		
@@ -94,6 +90,7 @@ public class MainTest {
 				
 			books2.add(new Book(bookTitle,autName,publishYear,editorial,price));
 		}
+		return db;
 	}
 
 	private static String Scanner() {
@@ -120,7 +117,7 @@ public class MainTest {
 		return typed;
 	}
 	
-	public static void assign(ArrayList<Author> db){
+	public static ArrayList<Author> assign(ArrayList<Author> db){
 		//Reasignar libros de un author
 		System.out.println(db);
 		while(true){
@@ -137,10 +134,13 @@ public class MainTest {
 				
 			} else if(answer.equals("NO"))break;
 		}
+		return db;
 	}
 	
 	public static void setdbName(String DB1){
 		
 	}
-}
+	
+	
 
+}
