@@ -3,19 +3,18 @@ package basic;
 public class Book {
 	private String title;
 	// change to object Author
-	private String author;
-	private int year;
+private int year;
 	private String publisher;
 	private  double cost;
 
-	public Book(String title, String author, int year, String publisher, double cost) {
+	/*public Book(String title, String author, int year, String publisher, double cost) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		this.publisher = publisher;
 		this.cost = cost;
-	}
+	}// Old Constructor, it has the author name, so the array got it, and it is duplicated*/
 	public Book(String title, int year, String publisher, double cost) {
 		this.title = title;
 		this.year = year;
@@ -25,7 +24,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", year=" + year + ", publisher=" + publisher + ", cost=" + cost + "]";
+		return "Book [title:" + title + ", year:" + year + ", publisher:" + publisher + ", cost:" + cost + "]";
 	}
 
 	public String getTitle() {
@@ -34,14 +33,6 @@ public class Book {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
 	}
 
 	public int getYear() {

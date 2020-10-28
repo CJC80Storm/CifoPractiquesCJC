@@ -1,7 +1,6 @@
 package menu;
 
 import java.util.ArrayList;
-
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -12,13 +11,13 @@ public class Menu {
 	private static char m;
 	private static char f;
 	
-	public static ArrayList<Author > setDataBase(){
+	public static ArrayList<Author > setDataBaseInitial(){
 	
 	ArrayList<Author> db= new ArrayList<Author>();
 	
-	Author author1 = new Author("Fulanito", "ful2322@mail.net", m);
-	Author author2 = new Author("Menganita", "mengarodri55@mail.net", f);
-	Author author3 = new Author("Jaimito", "toloco69@mail.net", m);
+	Author author1 = new Author("Fulanito","ful2322@mail.net", m);
+	Author author2 = new Author("Menganita","mengarodri55@mail.net", f);
+	Author author3 = new Author("Jaimito","toloco69@mail.net", m);
 	Collections.addAll(db,author1,author2,author3);
 	
 	return db;
@@ -26,32 +25,38 @@ public class Menu {
 	
 	public static void setmenu(ArrayList<Author> db) {
 		String typed;
+		int indexPrint=0;
 		
-		System.out.println("Type you choice(letter); Start, 'Create book', 'ReAssing', or 'Quit'.");
-		
-		typed = Scanner();
-		
-		
-		ArrayList<String>optionsDB= new ArrayList<String>();
-		Collections.addAll(optionsDB,"Start", "Create book", "ReAssing", "Quit");
-		int index;
-		for(index=0;index<optionsDB.size();index++);
-			if (typed.equals(optionsDB.get(index)));
-				if(index==0) {
-					start(db);
-				} else if (index==1){
-					createBook(db);
-				} else if (index==2) {
-					assign(db);
-				}
+		while(true) {
+			
+			System.out.println("Type you choice(letter); Start, Create book, ReAssing, or Quit.");
+			typed = Scanner();
+			
+			ArrayList<String>optionsDB= new ArrayList<String>();
+			Collections.addAll(optionsDB,"Start", "Create book", "ReAssing", "Quit");	
+			
+			if (typed.equals(optionsDB.get(3)))break;
+			else if(typed.equals(optionsDB.get(0))){
+				db=start(db);
+			}else if(typed.equals(optionsDB.get(1))){
+				db=createBook(db);
+				System.out.println("Size:" + db);
+			}else if(typed.equals(optionsDB.get(2))){
+				db=assign(db);
+			}
+		} 
+		while(indexPrint<db.size()){
+			System.out.println("The books of "+db.get(indexPrint).getName()+" are: "+db.get(indexPrint).getBooks());	
+			indexPrint++;
+		}
 	}
 
 	public static ArrayList<Author> start(ArrayList<Author> db){
 		
 		ArrayList<Book> books1 =new ArrayList<Book>();
-			Book Sabor= new Book("Sabor",db.get(0).getName(),2001,"EdicionesA",20.0);
-			Book Olor= new Book("Olor",db.get(0).getName(),2002,"EdicionesB",30.0);
-			Book Vista = new Book("Vista",db.get(0).getName(),2020,"EdicionesC",15.0);		
+			Book Sabor= new Book("Sabor",2001,"EdicionesA",20.0);
+			Book Olor= new Book("Olor",2002,"EdicionesB",30.0);
+			Book Vista = new Book("Vista",2020,"EdicionesC",15.0);		
 		
 			books1.add(Sabor);
 			books1.add(Olor);
@@ -64,21 +69,20 @@ public class Menu {
 		ArrayList<Book> books2 =new ArrayList<Book>();
 			db.get(1).setBooks(books2);
 		ArrayList<Book> books3 =new ArrayList<Book>();
-			db.get(3).setBooks(books3);
+			db.get(2).setBooks(books3);
+			
 			return db;
 	}
 
 	public static ArrayList<Author> createBook(ArrayList<Author> db){
 		int index=0;
 		ArrayList<Book> books2 =new ArrayList<Book>();
-		
-		db.get(1).setBooks(books2); 
-		
+	
 		while (true) {
-			System.out.println("Type Title");
+			System.out.println("Type Title, (if you want to finish, type 'quit'). ");
 			String bookTitle=Scanner();
 			if (bookTitle.contains("quit")) break;
-			String autName=db.get(1).getName(); //author Name
+			//String autName=db.get(1).getName(); //author Name, ArrayList code had his/her name.
 			System.out.println("Type Year Publishing:");
 			int publishYear=ScannerInt();
 			System.out.println("Type Editorial:");
@@ -89,8 +93,11 @@ public class Menu {
 			String bookName="name"+Integer.toString(index);
 			index++;
 				
-			books2.add(new Book(bookTitle,autName,publishYear,editorial,price));
+			books2.add(new Book(bookTitle,publishYear,editorial,price));
 		}
+		
+		db.get(1).setBooks(books2); 
+		System.out.println("  ");
 		return db;
 	}
 
@@ -120,20 +127,27 @@ public class Menu {
 	
 	public static ArrayList<Author> assign(ArrayList<Author> db){
 		//Reasignar libros de un author
-		System.out.println(db);
+		int y=0;
+		int x=0;
+		
+		
 		while(true){
-			System.out.println("Is it ok?(YES/NO)");
+			db=Menu.createBook(db);
+			while(y<db.size()) {
+				System.out.println(db.get(y)+" and their books are: ");
+				while(x<db.get(y).getBooks().size()){
+					System.out.println(db.get(y).getBooks().get(x));
+					x++;
+				}
+				y++;
+			}
+			
+			System.out.println("It is Correct?(YES/NO)");
 			String answer=Scanner();
 			if(answer.equals("NO")) {
-				System.out.println("type title");
-				
-				
-				
-				
-				
-				
-				
-			} else if(answer.equals("NO"))break;
+				db.get(2).getBooks().add(db.get(1).getBooks().get(0));
+				db.get(1).getBooks().remove(0);
+			}else break;
 		}
 		return db;
 	}

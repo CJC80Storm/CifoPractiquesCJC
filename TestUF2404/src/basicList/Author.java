@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import basic.Book;
 
 public class Author {
+	
 	private String name; 
 	private String email;
 	private char gender;
 	private ArrayList<Book> books;
-	private ArrayList<Author> db;
 	
 	 public Author(String name, String email, char gender) {
 	 	this.name = name;
