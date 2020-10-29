@@ -1,5 +1,7 @@
 package person;
 
+import java.util.ArrayList;
+
 import modelCard.LyyraCard;
 
 public class Person {
@@ -9,6 +11,7 @@ public class Person {
 	int height;
 	int age;
 	LyyraCard bankCard;
+	double cash; 
 
 	public Person(String firstName, String lastName, int weight, int height, int age) {
 		this.firstName=firstName;
@@ -17,6 +20,7 @@ public class Person {
 		this.height=height;
 		this.age=age;
 		this.bankCard=bankCard;
+		this.cash=cash;
 	}
 	//
 	public Person() {
@@ -26,8 +30,21 @@ public class Person {
 		this.height=height;
 		this.age=age;
 		this.bankCard=bankCard;
+		this.cash=cash;
 	}
 
+	public LyyraCard getBankCard() {
+		return bankCard;
+	}
+	public void setBankCard(LyyraCard bankCard) {
+		this.bankCard = bankCard;
+	}
+	public double getCash() {
+		return cash;
+	}
+	public void setCash(double cash) {
+		this.cash = cash;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
