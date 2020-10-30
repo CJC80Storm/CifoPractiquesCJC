@@ -1,7 +1,5 @@
 package person;
 
-import java.util.ArrayList;
-
 import modelCard.LyyraCard;
 
 public class Person {
@@ -11,9 +9,9 @@ public class Person {
 	int height;
 	int age;
 	LyyraCard bankCard;
-	double cash; 
-
-	public Person(String firstName, String lastName, int weight, int height, int age) {
+	double cash;
+	
+	public Person(String firstName, String lastName, int weight, int height, int age, LyyraCard bankCard, double cash) {
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.weight=weight;
@@ -84,5 +82,12 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }

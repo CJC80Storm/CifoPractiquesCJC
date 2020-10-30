@@ -12,6 +12,12 @@ public class MenuToChoose {
 		this.dishes=dishes;
 		this.prizes=prizes;
 	}
+	public MenuToChoose () {
+		ArrayList<String> dishes =new ArrayList<String>();
+		ArrayList<Double> prizes =new ArrayList<Double>();
+		this.dishes=dishes;
+		this.prizes=prizes;
+	}
 	
 	public int dishSizes() {
 		int i=dishes.size();

@@ -4,12 +4,11 @@ import java.util.Scanner;
 import modelCard.LyyraCard;
 
 public class CashRegister {
-	
-	static double cashInBox;   // the amount of cash in the register
-	int economicalSold;   // the amount of economical lunches sold
-	int gourmetSold;       // the amount of gourmet lunches sold
+	public static double cashInBox;   // the amount of cash in the register
+	public int economicalSold;   // the amount of economical lunches sold
+	public int gourmetSold;       // the amount of gourmet lunches sold
 	double cardGot;
-
+	
 	//constructor
 	public CashRegister (double cashInRegister,int economicalSold,int gourmetSold) {
 		this.cashInBox=cashInBox;
@@ -17,7 +16,7 @@ public class CashRegister {
 		this.gourmetSold=gourmetSold;
 		this.cardGot=cardGot;
 	}
-
+		
 	public static double getCashInBox() {
 		return cashInBox;
 	}
@@ -50,8 +49,15 @@ public class CashRegister {
 		this.cardGot = cardGot;
 	}
 
+
+	
+	
 }
 
-
+	
+	
+	
+	
+	
 
 

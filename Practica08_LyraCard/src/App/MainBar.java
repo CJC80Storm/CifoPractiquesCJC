@@ -6,18 +6,18 @@ import campusBar.CashRegister;
 import person.Person;
 import menuApp.Operations;
 import person.Person;
+import createFolks.ArrayCustomer;
 
 public class MainBar {
 	
 	public static void main (String[] args) {
-		CashRegister box1;
-		/*ArrayList<Person> persons= Operations.SetMoneyToBuy();
-
-		box1=Operations.SetOperations1(persons);	
-	
-		System.out.println(box1);
-	*/	
 		
+		ArrayList<Person> customers= new ArrayList<Person>();
+		customers=ArrayCustomer.SetMoneyToBuy();
+		
+		Operations.setOperations1(customers);
+				
+			
 		System.out.println("Thanks for your buying our Menus!");
 	}
 
