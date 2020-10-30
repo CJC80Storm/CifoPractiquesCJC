@@ -3,31 +3,61 @@ import java.util.ArrayList;
 
 public class Library {
 	int i=0;
+	String Name;
 	
-	static ArrayList<Book> library = new ArrayList<Book>();
-		
-	public static int baseConditions (int counter) {
-		Book cheese = new Book("Cheese Problems Solved", "Woodhead Publishing", 2007);
-		counter++;
-		Book nhl = new Book("NHL Hockey", "Stanley Kupp", 1952);
-		counter++;
-		return counter;
+	ArrayList<Book> library = new ArrayList<Book>();
+	
+	//Constructor
+	public Library(ArrayList<Book>library,String Name) {
+		this.library=library;
+		this.Name=Name;
 	}
 	
-	public void add (Book bookAdded) {
-		this.library.add(bookAdded);
+	
+	public String getName() {
+		return Name;
 	}
 
-	public static void searchOnLibrary(String searchedTitle) {
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+
+	public ArrayList<Book> getLibrary() {
+		return library;
+	}
+
+
+	public void setLibrary(ArrayList<Book> library) {
+		this.library = library;
+	}
+
+
+
+	
+	public static ArrayList<Book> addBook (ArrayList<Book> library, Book bookToAdd) {
+		library.add(bookToAdd);
+		return library;
+	}
+	
+	public static int searchOnLibrary(String searchedTitle,ArrayList<Book> library) {
 		System.out.println(" The books of opur library than contains "+searchedTitle+" are:");
+		int i=0;
 		int counter=0;
-		for(int i=0;i<=(library.size()-1);i++) {
-			if (library.contains(searchedTitle)) {
-				System.out.println();
-				counter++;
+		
+		while(i<(library.size())) {
+			if (library.get(i).getTitle().contains(searchedTitle)) {
+				counter=1;
+				break;
+				}else {
+				i++;
 			}
 		}
-		System.out.println("There are "+counter+"book than contains:"+searchedTitle+".");
+		if(counter==0) {
+			i=i+1;
+		} 
+		return i;
 	}
 	
 }
