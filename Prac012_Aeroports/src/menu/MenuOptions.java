@@ -7,8 +7,8 @@ import aeroprts.Plane;
 
 public class MenuOptions {
 	
-	public static boolean menuConsola(Scanner reader) {
-		ArrayList<Plane> planes= new ArrayList<Plane>();
+	public static boolean menuConsola(ArrayList<Plane> planes, Scanner reader) {
+		
 		
 		System.out.println("Choose an option:");
 		System.out.println("[1] Add a plane.");
@@ -25,7 +25,6 @@ public class MenuOptions {
 		} else if(typeLowcase=="x") {
 			return false;
 		}
-			
 		return true; 
 	}
 	
@@ -39,8 +38,31 @@ public class MenuOptions {
 		planes.add(new Plane(idLowCase,capacity));
 	}
 	
-	public static void addFligth(ArrayList<Plane> planes) {
-		
+	public static void addFligth(ArrayList<Plane> planes, Scanner reader) {
+		System.out.print("Doneu codi avió: ");
+		String typed=reader.nextLine();
+		String idLowCase=typed.toLowerCase();
+		int existingPlane=searchPlane(idLowCase,planes); 
+		if(existingPlane>planes.size()) {
+			System.out.print("Doneu codi aeroport sortida(departure): ");
+			String typed=reader.nextLine();
+			String idDeparture=typed.toLowerCase();
+			System.out.print("Doneu codi aeroport sortida(arrival): ");
+			String typed=reader.nextLine();
+			String idArrival=typed.toLowerCase();
+			
+			planes.get(existingPlane).setFligths(new Flight(idDeparture,idArrival));
+		} else {
+			System.out.print("Doneu la capacitat de l'avió");
+			int capacity=reader.nextInt();
+			System.out.print("Doneu codi aeroport sortida(departure): ");
+			String typed=reader.nextLine();
+			String idDeparture=typed.toLowerCase();
+			System.out.print("Doneu codi aeroport sortida(arrival): ");
+			String typed=reader.nextLine();
+			String idArrival=typed.toLowerCase();
+			planes.add(new Plane(idLowCase,capacity,new Flight(idDeparture,idArrival));
+		}
 		
 	}
 	
