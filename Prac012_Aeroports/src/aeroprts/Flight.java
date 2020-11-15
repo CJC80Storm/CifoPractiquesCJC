@@ -27,5 +27,9 @@ public class Flight {
 	public void setAirportArrival(String airportArrival) {
 		this.airportArrival = airportArrival;
 	}
+	
+	public String toStringFlight() {
+		return  (" ("+airportDeparture+" - "+airportArrival+")");
+	}
 
 }

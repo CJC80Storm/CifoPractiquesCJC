@@ -42,7 +42,8 @@ public class MenuOptions {
 		System.out.print("Doneu codi avió: ");
 		String typed=reader.nextLine();
 		String idLowCase=typed.toLowerCase();
-		int existingPlane=searchPlane(idLowCase,planes); 
+		int existingPlane=Consola.searchPlane(idLowCase,planes); 
+		
 		if(existingPlane>planes.size()) {
 			System.out.print("Doneu codi aeroport sortida(departure): ");
 			String typed=reader.nextLine();
@@ -63,14 +64,6 @@ public class MenuOptions {
 			String idArrival=typed.toLowerCase();
 			planes.add(new Plane(idLowCase,capacity,new Flight(idDeparture,idArrival));
 		}
-		
 	}
-	
-
-	
-	
-	
-	
-	
 	
 }

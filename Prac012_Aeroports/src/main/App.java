@@ -20,7 +20,7 @@ public class App {
 		}
 		
 		while (controlPrint) {
-			//controlPrint=Consola.menuPrint(planes,reader);
+			controlPrint=Consola.menuPrint(planes,reader);
 		}
 		
 		System.out.println("Thanks for using the service of Airports. See you in sky!!");
