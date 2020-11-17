@@ -34,17 +34,17 @@ public class Connection {
 		System.out.println(myDoc.toString());
 
 		// create a new Car as a DOCUMENT
-		Document car = new Document("_id", new ObjectId());
+		Document bird = new Document("_id", new ObjectId());
 		// set the document with APPEND
 		bird.append("make", "Magda").append("price", 5000d).append("designeBy", "Martinelli, Sonia");
 		// add that document to CARS collection
-		collection.insertOne(car);
-
+		collection.insertOne(bird);
+		
 		System.out.println("New document, new Bird: " + collection.countDocuments());
 
 		// print all documents from my collection Birds
-		for (Document carToPrint : collection.find()) {
-			System.out.println(carToPrint.toJson());
+		for (Document birdToPrint : collection.find()) {
+			System.out.println(birdToPrint.toJson());
 		}
 
 	}
