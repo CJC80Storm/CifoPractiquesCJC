@@ -37,5 +37,8 @@ public class Container {
 			this.nivel=0;
 		}
 	}
+	public String toString() {
+		return (nivel+"/"+referenciaMax);
+	}
 	
 }
