@@ -18,22 +18,38 @@ public class Program {
 	}
 	
 	public String toString() {
-		return hashmap.toString();
+		return hashmap.values().toString();
 	
 	}
 
-
 	public static void printKeys(HashMap<String,String> hashmap) {
 		
+		for(String h : hashmap.keySet()) {
+			System.out.println(h);
+		}
 	}
 	
 	public static void printKeysWhere(HashMap<String,String> hashmap, String text) {
 		
+		for(String keyControler: hashmap.keySet()) {
+			if(keyControler.contains(text)) {
+		
+				System.out.println(keyControler);;
+			}
+		}
 	}
 
 	public static void printValuesOfKeysWhere(HashMap<String,String> hashmap, String text) {
 		
+		for(String keyControler : hashmap.keySet()) {
+						
+			if(keyControler.contains(text)) {
+				System.out.println(hashmap.get(keyControler));
+			}
+		}
+		
 	}
+
 	
 	
 }
