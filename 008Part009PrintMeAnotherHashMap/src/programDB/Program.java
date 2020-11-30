@@ -33,12 +33,13 @@ public class Program {
 	public static void printValueIfNameContains(HashMap<String,Book> hashmap, String text) {
 		// TODO Auto-generated method stub
 		
-		/*for(HashMap<String,Book>.getBook book: hashmap.values() ) {
+		for(String h: hashmap.keySet() ) {
 			
-			if(hashmap.keySet().contains(text)) {
-				System.out.println(hashmap.get(book).toString());
+			if(hashmap.get(h).getTitle().contains(text)) {
+				System.out.println("Name: "+hashmap.get(h).getTitle()+" ( "+hashmap.get(h).getYear()+")");
+				System.out.println("Content: "+hashmap.get(h).getContent());
 			}
-		}*/
+		}
 	}
 
 }

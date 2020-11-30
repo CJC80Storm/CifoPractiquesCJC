@@ -41,4 +41,8 @@ public class Book {
 		this.content = content;
 	}
 	
+	public String toString() {
+		return("Title: "+title+", Year: "+year);
+	}
+	
 }
