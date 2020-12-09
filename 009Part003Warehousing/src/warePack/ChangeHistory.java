@@ -52,7 +52,7 @@ public class ChangeHistory {
 		} else if(this.stores.size()>1) {
 			variable=this.stores.get(position);
 			while(position<=this.stores.size()) {
-				if(variable<this.stores.get(position+1)) {
+				if(variable<this.stores.get(position)) {
 					variable=this.stores.get(position);
 				} 
 				position++;
@@ -73,7 +73,7 @@ public class ChangeHistory {
 		} else if(this.stores.size()>1) {
 			variable=this.stores.get(position);
 			while(position<=this.stores.size()) {
-				if(variable>this.stores.get(position+1)) {
+				if(variable>this.stores.get(position)) {
 					variable=this.stores.get(position);
 				} 
 				position++;
@@ -94,7 +94,7 @@ public class ChangeHistory {
 		} else if(this.stores.size()>1) {
 			variable=this.stores.get(position);
 			while(position<=this.stores.size()) {
-				variable=variable+this.stores.get(position+1);
+				variable=variable+this.stores.get(position);
 				position++;
 			}
 		}
